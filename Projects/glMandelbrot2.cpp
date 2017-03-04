@@ -129,9 +129,9 @@ void fill(unsigned char arr[ARESY][ARESX][3]) {
 		
 				
 			int n = isBounded(C);
-			arr[r][c][0] = 223*n%256; // red
-			arr[r][c][1] = 18*n%256; // green
-			arr[r][c][2] = 97*n%256; // blue
+			arr[r][c][0] = 230*n%256; // red
+			arr[r][c][1] = 150*n%256; // green
+			arr[r][c][2] = 90*n%226; // blue
 		}
 	}
 }
@@ -144,7 +144,7 @@ int isBounded(complex <double> C) {
 	// iterate through the sequence
 	int i = 0;
 	for(i = 0; i < L; i++) {
-		M = sin(M*M*M) + C*C;
+		M = M*M + tan(C*C); //cosh(M*M) + tan(C*C*C*C);
 
 		// check where sequence gets unbounded
 		if(M.real()*M.real() + M.imag()*M.imag() > 4) {
