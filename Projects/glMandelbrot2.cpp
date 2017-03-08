@@ -144,7 +144,7 @@ int isBounded(complex <double> C) {
 	// iterate through the sequence
 	int i = 0;
 	for(i = 0; i < L; i++) {
-		M = cosh(M*M) + tan(C*C*C*C);
+		M = M + tan(C*C); //cosh(M*M) + tan(C*C*C*C);
 
 		// check where sequence gets unbounded
 		if(M.real()*M.real() + M.imag()*M.imag() > 4) {
